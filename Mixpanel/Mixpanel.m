@@ -332,7 +332,7 @@ static Mixpanel *sharedInstance = nil;
 {
     for (id k in properties) {
         NSAssert([k isKindOfClass: [NSString class]], @"%@ property keys must be NSString. got: %@ %@", self, [k class], k);
-        id v = [properties objectForKey:k];
+        id v __attribute__((unused)) = [properties objectForKey:k];
         NSAssert([v isKindOfClass:[NSString class]] ||
                  [v isKindOfClass:[NSNumber class]] ||
                  [v isKindOfClass:[NSNull class]] ||
